@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+
+    <div class="header">Flatiron Students Winter 2013</div>
+
+    <div id="student-info">
+      
+      <!--
+      Example HTML Structure:
+      
+      <div class="message">
+        <a href="" class="close"></a>
+        <div class="from">
+          Bob Saget
+        </div>
+        <div class="content">
+          Well, hello there!
+        </div>
+        <div class="time">
+          Oct 15, 2012 3:43 PM
+        </div>
+      </div>
+      -->
+      
+      
+      <!-- TODO: Add messages to the page -->
+       <% @students.each do |student| %>
+
+<h1><%= student.name %></h1>
+<h2><%= student.tagline %><h2>
+<h3><%= student.intro_paragraph %></h3>
+<h3><%= student.social_links %></h3>
+<h3><%= student.work %></h3>
+<h3><%= student.education %></h3>
+<h3><%= student.coder_cred %></h3>
+<h3><%= student.blog_link %></h3>
+<h3><%= student.fav_companies %></h3>
+<h3><%= student.fav_websites %></h3>
+<h3><%= student.quotes %></h3>
+
+
+
+
+<% end %>
+    </div>
+  </body>
+</html>
