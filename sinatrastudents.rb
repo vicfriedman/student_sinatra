@@ -42,7 +42,7 @@ class Student
   property :fav_companies, Text
   property :fav_websites, Text
   property :quotes, Text
-
+  property :slug, String
 
   def scrape_and_insert(url)
     begin
@@ -58,6 +58,7 @@ class Student
     self.scrape_fav_companies
     self.scrape_fav_websites
     self.scrape_quotes
+    self.slug = slugify_name
     self.save
 
   rescue => ex
@@ -66,6 +67,9 @@ class Student
     end
   end
 
+  def slugify_name
+    name.downcase.gsub(" ", "-")
+  end
 
   def scrape_name
     self.name = @doc.css("h1").inner_text
@@ -144,7 +148,7 @@ end
 DataMapper.finalize
 DataMapper.auto_upgrade!
 
-def student_scraper
+def student_scraper(student_urls)
   student_urls.each do |student|
     begin
     hella_student = Student.new
@@ -157,6 +161,8 @@ def student_scraper
     end
   end
 end
+
+# student_scraper(student_urls)
 
 
 

@@ -7,3 +7,8 @@ get '/' do
 end
 
 
+get '/:slug' do 
+  @student = Student.first(:slug => params[:slug])
+  erb :profile
+end
+

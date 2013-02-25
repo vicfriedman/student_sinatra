@@ -19,18 +19,18 @@
 
     <div class="student_info">     
        <% @students.each do |student| %>
-          <h1><%= student.name %></h1>
-          <h2><%= student.tagline %><h2>
-          <h3><%= student.intro_paragraph %></h3>
-          <h3><%= student.social_links %></h3>
-          <h3><%= student.work %></h3>
-          <h3><%= student.education %></h3>
-          <h3><%= student.coder_cred %></h3>
-          <h3><%= student.blog_link %></h3>
-          <h3><%= student.fav_companies %></h3>
-          <h3><%= student.fav_websites %></h3>
-          <h3><%= student.quotes %></h3>
-        <% end %>
+          <h1><a href="/<%= student.slug %>"><%= student.name %></a></h1>
+<!--           <h2><%#= student.tagline %><h2>
+          <h3><%#= student.intro_paragraph %></h3>
+          <h3><%#= student.social_links %></h3>
+          <h3><%#= student.work %></h3>
+          <h3><%#= student.education %></h3>
+          <h3><%#= student.coder_cred %></h3>
+          <h3><%#= student.blog_link %></h3>
+          <h3><%#= student.fav_companies %></h3>
+          <h3><%#= student.fav_websites %></h3>
+          <h3><%#= student.quotes %></h3>
+ -->        <% end %>
     </div>
 
   </body>
