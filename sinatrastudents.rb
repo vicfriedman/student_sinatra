@@ -17,7 +17,7 @@ end
 
 
 # INDEX = "http://students.flatironschool.com/"
-# # INDEX_DOC = Nokogiri::HTML(open(INDEX))
+# INDEX_DOC = Nokogiri::HTML(open(INDEX))
 
 # student_urls = INDEX_DOC.css("div.one_third > a").map do |a| 
 
@@ -25,6 +25,7 @@ end
 
 # end
 
+# p student_urls
 
 class Student
   include DataMapper::Resource
@@ -42,15 +43,6 @@ class Student
   property :fav_websites, Text
   property :quotes, Text
 
-
-
-  # def initialize(params={}) 
-  #   @id = params[:id]
-  #   @name = params[:name]
-  #   @tagline = params[:tagline]
-  #   @intro_paragraph = params[:intro_paragraph]
-  #   @social_links = params[:social_links]
-  # end
 
   def scrape_and_insert(url)
     begin
@@ -165,7 +157,6 @@ def student_scraper
     end
   end
 end
-
 
 
 
